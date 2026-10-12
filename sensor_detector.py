@@ -14,6 +14,12 @@ def classify_temperature(
     ):
         return "INVALID"
 
+    if minimum > maximum:
+        raise ValueError("Minimum cannot exceed maximum.")
+
+    if safe_limit < minimum or safe_limit > maximum:
+        raise ValueError("Safety limit must be within the valid range.")
+
     if temp < minimum or temp > maximum:
         return "INVALID"
 
@@ -32,3 +38,4 @@ if __name__ == "__main__":
     for reading in readings:
         status = classify_temperature(reading)
         print(f"Temperature: {reading} -> {status}")
+
