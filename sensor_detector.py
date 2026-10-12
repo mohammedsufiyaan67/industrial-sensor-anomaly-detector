@@ -1,4 +1,3 @@
-
 import math
 
 
@@ -38,4 +37,3 @@ if __name__ == "__main__":
     for reading in readings:
         status = classify_temperature(reading)
         print(f"Temperature: {reading} -> {status}")
-
